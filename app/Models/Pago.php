@@ -19,7 +19,7 @@ class Pago extends Model
         'monto'      => 'decimal:2',
     ];
 
-    public function factura(): BelongsTo
+    public function factura(): BelongsTo//BelongsTo es pertenece a ára indicar que una pago tiene un solo una factura no puede tener multiples
     {
         return $this->belongsTo(Factura::class);
     }
