@@ -11,7 +11,7 @@
 
 Aplicación de escritorio para administrar las **facturas y los pagos pendientes a proveedores** de una ferretería. Permite llevar el control de adeudos, registrar abonos y dar seguimiento a las fechas de vencimiento, todo desde una interfaz sencilla y clara.
 
-> Proyecto desarrollado con Laravel + Electron (vía NativePHP), pensado para funcionar como un programa de escritorio.
+> Proyecto desarrollado con Laravel, pensado para funcionar como un programa de Multiplataforma.
 
 ---
 
@@ -31,7 +31,6 @@ Aplicación de escritorio para administrar las **facturas y los pagos pendientes
 | Tecnología | Para qué se usó |
 |---|---|
 | **Laravel 12** (PHP) | Framework principal: lógica, rutas, base de datos |
-| **NativePHP / Electron** | Convierte la app Laravel en un programa de escritorio |
 | **SQLite / MySQL** | Base de datos donde se guarda todo |
 | **Blade** | Sistema de plantillas para las pantallas |
 | **Bootstrap 5** | Estilos base de la interfaz |
