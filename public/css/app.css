@@ -1,0 +1,231 @@
+/* =========================================================
+   ESTILOS DE LA APP — Paleta: negro, blanco y rojo
+   Estilo: moderno y limpio · Ferretería
+
+   👉 Para cambiar colores, edita SOLO el bloque :root de abajo.
+   ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+:root {
+    /* --- Tus colores de marca --- */
+    --negro: #17181c; /* barra superior, textos fuertes */
+    --negro-osc: #0d0e11; /* negro más profundo (degradados) */
+    --rojo: #e0212e; /* ROJO de acento (botones, alertas) */
+    --rojo-osc: #b81824; /* rojo más oscuro (hover) */
+    --verde: #1f9d57; /* solo para el estatus "Pagada" */
+    --verde-osc: #178049;
+
+    --texto: #1b1d22; /* color del texto */
+    --borde: #e6e8ec; /* líneas suaves de las cajas */
+
+    --fondo: #f6f1f1;
+}
+
+/* ---------- Base ---------- */
+body {
+    background-color: var(
+        --fondo
+    ) !important; /* gana al bg-light de Bootstrap */
+    color: var(--texto);
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+/* ---------- Barra superior (negra con filo rojo) ---------- */
+.navbar.bg-dark {
+    background: var(--negro) !important;
+    border-bottom: 3px solid var(--rojo);
+    box-shadow: 0 2px 14px rgba(0, 0, 0, 0.18);
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+.navbar-brand {
+    font-size: 1.25rem;
+}
+.navbar-brand i {
+    color: var(--rojo);
+} /* el icono de la llave, en rojo */
+.navbar .nav-link {
+    font-weight: 500;
+    opacity: 0.8;
+    transition: opacity 0.15s ease;
+}
+.navbar .nav-link:hover {
+    opacity: 1;
+}
+
+/* ---------- Tarjetas ---------- */
+.card {
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    overflow: hidden; /* esquinas limpias */
+    box-shadow: 0 1px 3px rgba(16, 18, 27, 0.06);
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid var(--borde);
+    padding: 0.9rem 1.1rem;
+    font-weight: 700;
+}
+
+/* Tarjetas de resumen del dashboard: flotan al pasar el mouse */
+.card.text-bg-primary:hover,
+.card.text-bg-danger:hover {
+    transform: translateY(-3px);
+}
+
+/* "Adeudo total" -> tarjeta NEGRA (es el dato más importante) */
+.text-bg-primary {
+    background: linear-gradient(
+        135deg,
+        var(--negro),
+        var(--negro-osc)
+    ) !important;
+    color: #fff !important;
+}
+/* "Vencidas" -> tarjeta ROJA (alerta) */
+.text-bg-danger {
+    background: linear-gradient(
+        135deg,
+        var(--rojo),
+        var(--rojo-osc)
+    ) !important;
+    color: #fff !important;
+}
+
+/* ---------- Botones ---------- */
+.btn {
+    border-radius: 9px;
+    font-weight: 600;
+    padding: 0.45rem 1rem;
+}
+
+/* Botón principal = ROJO (Nuevo proveedor, Guardar, etc.) */
+.btn-primary {
+    background-color: var(--rojo);
+    border-color: var(--rojo);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--rojo-osc);
+    border-color: var(--rojo-osc);
+}
+
+/* Registrar pago = verde (acción positiva, distinta del rojo) */
+.btn-success {
+    background-color: var(--verde);
+    border-color: var(--verde);
+}
+.btn-success:hover,
+.btn-success:focus {
+    background-color: var(--verde-osc);
+    border-color: var(--verde-osc);
+}
+
+.btn-outline-primary {
+    color: var(--rojo);
+    border-color: var(--rojo);
+}
+.btn-outline-primary:hover {
+    background-color: var(--rojo);
+    border-color: var(--rojo);
+    color: #fff;
+}
+
+/* ---------- Tablas ---------- */
+.table {
+    margin-bottom: 0;
+}
+.table thead th {
+    background-color: #fafafb;
+    color: #6b7280;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--borde);
+    padding: 0.85rem 0.9rem;
+}
+.table tbody td {
+    padding: 0.85rem 0.9rem;
+    vertical-align: middle;
+}
+.table-hover tbody tr:hover {
+    background-color: #faf3f3;
+} /* roce de rojo muy leve */
+
+/* ---------- Etiquetas de estatus ---------- */
+.badge {
+    font-weight: 600;
+    padding: 0.4em 0.7em;
+    border-radius: 6px;
+}
+.text-bg-success {
+    background-color: var(--verde) !important;
+}
+.text-bg-danger {
+    background-color: var(--rojo) !important;
+}
+
+/* ---------- Formularios ---------- */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--rojo);
+    box-shadow: 0 0 0 0.2rem rgba(224, 33, 46, 0.15);
+}
+.form-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+/* ---------- Aparición suave al cargar ---------- */
+main > * {
+    animation: aparecer 0.8s ease both;
+}
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- TAMAÑO DEL LOGO ---------- */
+/* Cambia el valor de "height" para hacerlo más grande o más chico.
+   El ancho se ajusta solo para que no se deforme. */
+.navbar-brand img {
+    height: 150px;
+    width: auto;
+}
+
+/* Si el logo crece mucho, dale más aire a la barra para que no se vea apretado */
+.navbar.bg-dark {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+/* El título centrado solo se posiciona de forma absoluta en pantallas grandes */
+@media (min-width: 992px) {
+    .navbar-text.titulo-centro {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
